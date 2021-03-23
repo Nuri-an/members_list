@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 export const View = styled.div`
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: ${props => props.height}px;
     display: flex;
     justify-content: center;
     background-color: rgba(0,0,0,0.8);
     transition-duration:0.5s;
+    padding-top: 150px;
 `;
 
 export const Container = styled.div`
@@ -20,6 +21,11 @@ export const Container = styled.div`
     justify-content: space-evenly;
     align-items: center;
     border-radius: 10px;
+    
+    @media(max-width: 768px) {
+        height: 350px;
+        width: 315px;
+    }
 `;
 
 export const ButtonClose = styled.img`
@@ -38,6 +44,11 @@ export const BoxPhoto = styled.img`
     height: 150px;
     width: 150px;
     border-radius: 200px;
+    
+    @media(max-width: 768px) {
+        height: 100px;
+        width: 100px;
+    }
 `;
 
 export const BoxText = styled.div`
@@ -51,6 +62,10 @@ export const Text = styled.p`
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
     text-align: center;
+    
+    @media(max-width: 768px) {
+        font-size: 14px;
+    }
 `;
 
 export const BoxInformations = styled.div`

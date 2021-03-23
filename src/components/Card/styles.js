@@ -16,12 +16,22 @@ export const Container = styled.div`
         box-shadow: 0 0 2em  #fca311;
         transform:scale(0.95);
     }
+    
+    @media(max-width: 768px) {
+        height: 300px;
+        width: 250px;
+    }
 `;
 
 export const BoxPhoto = styled.img`
     height: 230px;
     width: 230px;
     border-radius: 200px;
+    
+    @media(max-width: 768px) {
+        height: 150px;
+        width: 150px;
+    }
 `;
 
 export const BoxText = styled.div`

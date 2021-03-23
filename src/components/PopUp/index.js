@@ -3,23 +3,19 @@ import React, { useEffect, useState } from 'react';
 import { View, Container, ButtonClose, BoxPhoto, BoxText, Text, BoxInformations } from './styles';
 import { Close, Github, Repositories, Followers, CheckIn } from '../../assets';
 
-const PopUp = ({ photo, name, repositories, followers, checkIn, togglePopup }) => {
+const PopUp = ({ photo, name, repositories, followers, checkIn, togglePopup, currentHeight }) => {
     const [close, setClose] = useState(togglePopup);
 
     useEffect(() => {
         setClose(togglePopup);
     }, [togglePopup])
-    
-    useEffect(() => {
-        console.log(close)
-    }, [close])
 
     if(!close){
         return <React.Fragment />;
     }
 
     return  (
-        <View>
+        <View height={currentHeight}>
             <Container>
                 <ButtonClose src={Close} alt="fechar" title="Fechar" onClick={() => setClose(false)} />
                 <BoxPhoto src={photo} alt="Acquati" />
