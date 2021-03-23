@@ -17,6 +17,11 @@ const Index = () => {
             <Container>
                 <Card
                     photo="https://avatars.githubusercontent.com/u/15040050?v=4"
+                    login="Nurian"
+                    onClick={() => console.log("clicou")}
+                />
+                <Card
+                    photo="https://avatars.githubusercontent.com/u/15040050?v=4"
                     login="Acquati"
                     onClick={() => console.log("clicou")}
                 />
