@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    justify-content: center;
-    margin: 100px
+    margin: 100px;
+    padding-bottom: 500px;
 `;

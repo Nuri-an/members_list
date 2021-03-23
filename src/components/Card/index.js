@@ -1,18 +1,16 @@
 import React from 'react';
-import Github from '../../assets/github.svg';
+import { Github } from '../../assets';
 import { Container, BoxPhoto, BoxText, Text } from './styles';
 
-const Card = ({ photo, name, onClick }) => {
+const Card = ({ photo, login, onClick }) => {
     return (
-        <React.Fragment>
-            <Container onClick={onClick}>
-                <BoxPhoto src={photo} alt="Acquati"/>
-                <BoxText>
-                    <img src={Github} alt="login" title="Login" /> 
-                    <Text> {name} </Text>
-                </BoxText>
-            </Container>
-        </React.Fragment>
+        <Container onClick={onClick}>
+            <BoxPhoto src={photo} alt="Acquati" />
+            <BoxText>
+                <img src={Github} alt="login" title="Login" />
+                <Text> {login} </Text>
+            </BoxText>
+        </Container>
     );
 }
 
