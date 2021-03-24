@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import api from '../../services/api';
 
-import { Container, ContainerGrid } from './styles';
+import { Users } from '../../assets';
+import { Container, BoxHeader, ImgHeader, Input, ContainerGrid } from './styles';
 import Card from '../../components/Card';
 import PopUp from '../../components/PopUp';
 
@@ -13,7 +14,6 @@ const Index = () => {
     const [documentHeight, setDocumentHeight] = useState(refContainer.current?.clientHeight);
 
     useEffect(() => {
-        console.log(refContainer)
         setDocumentHeight(refContainer.current.clientHeight);
     }, [refContainer.current?.clientHeight]);
 
@@ -29,6 +29,7 @@ const Index = () => {
         setDataSpecific([]);
         api.get(`users/${login}`)
             .then((response) => {
+                window.scrollTo({ top: 120, behavior: 'smooth' });
                 setDataSpecific(response.data);
                 setShowPopup(true)
             })
@@ -63,6 +64,10 @@ const Index = () => {
                     currentHeight={documentHeight}
                     onClick={close}
                 />
+                <BoxHeader style={{textAlign: 'center'}}>
+                    <ImgHeader src={Users} alt="Membros" />
+                    <Input type="text" onKeyUp={(e) => console.log(e.target.value)} placeholder="Busque um membro pelo login" />
+                </BoxHeader>
                 <ContainerGrid>
                     {
                         data.map((member, index) => (
