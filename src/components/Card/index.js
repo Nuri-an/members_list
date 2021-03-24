@@ -5,7 +5,7 @@ import { Container, BoxPhoto, BoxText, Text } from './styles';
 const Card = ({ photo, login, onClick }) => {
     return (
         <Container onClick={onClick}>
-            <BoxPhoto src={photo} alt="Acquati" />
+            <BoxPhoto src={photo} alt={login} />
             <BoxText>
                 <img src={Github} alt="login" title="Login" />
                 <Text> {login} </Text>

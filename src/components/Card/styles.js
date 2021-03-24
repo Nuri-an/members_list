@@ -45,4 +45,8 @@ export const Text = styled.p`
     font-size: 24px;
     font-family: 'Poppins', sans-serif;
     text-align: center;
+    
+    @media(max-width: 768px) {
+        font-size: 20px;
+    }
 `;
