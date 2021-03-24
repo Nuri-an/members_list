@@ -18,12 +18,29 @@ const Index = () => {
     }, [refContainer.current?.clientHeight]);
 
     useEffect(() => {
+        getDataApi();
+    }, []);
+
+    const getDataApi = () => {
         api.get('orgs/grupotesseract/public_members')
             .then((response) => setData(response.data))
             .catch((err) => {
                 console.error("ops! ocorreu um erro" + err);
             });
-    }, []);
+    }
+
+    const searchData = (stringValue) => {
+        var dataFilter = data.filter((val) => val
+            .login
+            .toUpperCase()
+            .indexOf(stringValue.toUpperCase()) > -1
+        )
+        if (stringValue !== '') {
+            setData(dataFilter)
+        } else {
+            getDataApi();
+        }
+    }
 
     const showDataSpecific = (login) => {
         setDataSpecific([]);
@@ -66,7 +83,7 @@ const Index = () => {
                 />
                 <BoxHeader style={{textAlign: 'center'}}>
                     <ImgHeader src={Users} alt="Membros" />
-                    <Input type="text" onKeyUp={(e) => console.log(e.target.value)} placeholder="Busque um membro pelo login" />
+                    <Input type="text" onKeyUp={(e) => searchData(e.target.value)} placeholder="Busque um membro pelo login" />
                 </BoxHeader>
                 <ContainerGrid>
                     {
