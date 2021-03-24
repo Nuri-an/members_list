@@ -7,8 +7,10 @@ import PopUp from '../../components/PopUp';
 
 const Index = () => {
     const refContainer = useRef(null);
-    const [documentHeight, setDocumentHeight] = useState(refContainer.current?.clientHeight);
     const [data, setData] = useState([]);
+    const [dataSpecific, setDataSpecific] = useState([]);
+    const [showPopup, setShowPopup] = useState(false);
+    const [documentHeight, setDocumentHeight] = useState(refContainer.current?.clientHeight);
 
     useEffect(() => {
         console.log(refContainer)
@@ -21,27 +23,54 @@ const Index = () => {
             .catch((err) => {
                 console.error("ops! ocorreu um erro" + err);
             });
-    }, [])
+    }, []);
+
+    const showDataSpecific = (login) => {
+        setDataSpecific([]);
+        api.get(`users/${login}`)
+            .then((response) => {
+                setDataSpecific(response.data);
+                setShowPopup(true)
+            })
+            .catch((err) => {
+                console.error("ops! ocorreu um erro" + err);
+            });
+    }
+
+    const close = () => {
+        setShowPopup(!showPopup)
+    }
+
+    const convertDate = (date) => {
+        const convertedDate = date?.split('T')[0]
+            .split('-')
+            .reverse()
+            .join('/');
+
+        return convertedDate;;
+    }
 
     return (
         <React.Fragment>
             <Container ref={refContainer}>
                 <PopUp
-                    photo="https://avatars.githubusercontent.com/u/15040050?v=4"
-                    name="Leandro Acquati"
-                    repositories={31}
-                    followers={6}
-                    checkIn="08/10/2015"
-                    togglePopup={true}
+                    photo={dataSpecific.avatar_url}
+                    name={dataSpecific.name}
+                    repositories={dataSpecific.public_repos}
+                    followers={dataSpecific.followers}
+                    checkIn={convertDate(dataSpecific.created_at)}
+                    togglePopup={showPopup}
                     currentHeight={documentHeight}
+                    onClick={close}
                 />
                 <ContainerGrid>
-                    { 
+                    {
                         data.map((member, index) => (
                             <Card
                                 photo={member.avatar_url}
                                 login={member.login}
-                                onClick={() => console.log("clicou")}
+                                onClick={() => showDataSpecific(member.login)}
+                                hoverCss={!showPopup}
                                 key={index}
                             />
                         ))

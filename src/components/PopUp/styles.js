@@ -7,7 +7,7 @@ export const View = styled.div`
     display: flex;
     justify-content: center;
     background-color: rgba(0,0,0,0.8);
-    transition-duration:0.5s;
+    transition-duration: 0.5s;
     padding-top: 150px;
 `;
 

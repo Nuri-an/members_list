@@ -10,11 +10,11 @@ export const Container = styled.div`
     justify-content: space-evenly;
     align-items: center;
     border-radius: 10px;
-    transition-duration:0.5s;
+    transition-duration: ${props => props.hoverCss ? '0.5s' : ''};
 
     &:hover {
-        box-shadow: 0 0 2em  #fca311;
-        transform:scale(0.95);
+        box-shadow: ${props => props.hoverCss ? '0 0 2em  #fca311' : ''} ;
+        transform: ${props => props.hoverCss ? 'scale(0.95)' : ''};
     }
     
     @media(max-width: 768px) {

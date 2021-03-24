@@ -1,23 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import { View, Container, ButtonClose, BoxPhoto, BoxText, Text, BoxInformations } from './styles';
-import { Close, Github, Repositories, Followers, CheckIn } from '../../assets';
+import {
+    View,
+    Container,
+    ButtonClose,
+    BoxPhoto,
+    BoxText,
+    Text,
+    BoxInformations
+} from './styles';
+import {
+    Close,
+    Repositories,
+    Followers,
+    CheckIn
+} from '../../assets';
 
-const PopUp = ({ photo, name, repositories, followers, checkIn, togglePopup, currentHeight }) => {
-    const [close, setClose] = useState(togglePopup);
+const PopUp = ({
+    photo,
+    name,
+    repositories,
+    followers,
+    checkIn,
+    togglePopup,
+    currentHeight,
+    onClick
+}) => {
 
-    useEffect(() => {
-        setClose(togglePopup);
-    }, [togglePopup])
-
-    if(!close){
+    if (!togglePopup) {
         return <React.Fragment />;
     }
 
-    return  (
+    return (
         <View height={currentHeight}>
             <Container>
-                <ButtonClose src={Close} alt="fechar" title="Fechar" onClick={() => setClose(false)} />
+                <ButtonClose src={Close} alt="fechar" title="Fechar" onClick={onClick} />
                 <BoxPhoto src={photo} alt="Acquati" />
                 <BoxText>
                     <Text> {name} </Text>
