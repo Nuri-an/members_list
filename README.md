@@ -1,6 +1,6 @@
 # Lista de membros
 
-:::image type="content" source="Captura.png" alt-text="Captura de tela":::
+![](Captura.png)
 
 
 ## 🧾 Sobre a  aplicação
