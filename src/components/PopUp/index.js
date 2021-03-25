@@ -27,11 +27,11 @@ const PopUp = ({
     onClick
 }) => {
 
-    if (!togglePopup) {
+    if (!togglePopup) { //se a condição para mostrar o popup for false, nada é retornado
         return <React.Fragment />;
     }
 
-    return (
+    return ( //o popup é renderizado na tela só se togglePopup for true
         <View height={currentHeight}>
             <Container>
                 <ButtonClose src={Close} alt="fechar" title="Fechar" onClick={onClick} />

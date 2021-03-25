@@ -10,11 +10,11 @@ export const Container = styled.div`
     justify-content: space-evenly;
     align-items: center;
     border-radius: 10px;
-    transition-duration: ${props => props.hoverCss ? '0.5s' : ''};
+    transition-duration: ${props => props.hoverCss ? '0.5s' : ''}; //se o popup não estiver visível o efeito é aplicado
 
     &:hover {
-        box-shadow: ${props => props.hoverCss ? '0 0 2em  #fca311' : ''} ;
-        transform: ${props => props.hoverCss ? 'scale(0.95)' : ''};
+        box-shadow: ${props => props.hoverCss ? '0 0 2em  #fca311' : ''}; //se o popup não estiver visível o efeito é aplicado
+        transform: ${props => props.hoverCss ? 'scale(0.95)' : ''}; //se o popup não estiver visível o efeito é aplicado
     }
     
     @media(max-width: 768px) {
