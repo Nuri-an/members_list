@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Lista de membros
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+:::image type="content" source="Captura.png" alt-text="Captura de tela":::
 
-## Available Scripts
 
-In the project directory, you can run:
+## 🧾 Sobre a  aplicação
+Essa aplicação faz uma listagem dos membros do grupo Tessaract através da api do github, mostra os dados de um membro específico e faz um filtro pelo login.
 
-### `yarn start`
+- A listagem é feita através de cards dispostos em formato de grid.
+- Ao clicar em um card, abre um popup com os dados desse respectivo membro.
+- Para a busca, basta digitar qualquer letra no input da página que o filtro é feito instantaneamente.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ✨ Tecnologias utilizadas
+Essa aplicação foi feita com **React Web**, foi utilizado **Styled Components** na criação dos estilos e através do **Axios** foi feita a conexão com a api do github.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> [!TIP]
+> **Essas tecnologias foram utilizadas nas seguintes versões:**
+>
+> - react: "^17.0.1"
+>
+> - styled-components: "^5.2.1"
+>
+> - axios: "^0.21.1"
 
-### `yarn test`
+Essas são as dependências mais relevantes. Porém, além dessas, outras dependências necessárias para o projeto estão adicionadas e podem ser consultadas no arquivo [package.json <a href="./package.json">](package.json).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+:::image type="content" source="https://badge.fury.io/js/yaml.svg" alt-text="Captura de tela":::
+:::image type="content" source="https://travis-ci.org/eemeli/yaml.svg?branch=master" alt-text="Captura de tela":::
 
-### `yarn build`
+## 🚀 Como testar na minha máquina
+Para testar localmente basta:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clonar esse repositório: 
+`git clone https://github.com/Nuri-an/members_list.git`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Instalar as dependências:
+`yarn`, `yarn install` ou `npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Iniciar o projeto: `yarn start` ou `npm start`
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br /><br />
